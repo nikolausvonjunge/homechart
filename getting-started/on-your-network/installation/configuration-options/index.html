@@ -5,13 +5,13 @@ For a JSON configuration file, the keys are camelCase and nested under each sect
  App PostgreSQL SMTP Vault  For environment variables, every configuration key can be set using HOMECHART_<SECTION>_<KEY>=a value, i.e. HOMECHART_APP_DEBUG=true
 For a JSON configuration file, the keys are camelCase and nested under each section:
 { &#34;app&#34;: { &#34;debug&#34;: true } } Configuration values can be booleans (true/false), integers (1/2/3), lists (1,2,3/a,b,c), and strings (a/b/c)."><meta property="og:type" content="article"><meta property="og:url" content="https://docs.homechart.app/getting-started/on-your-network/installation/configuration-options/"><meta property="article:section" content="getting-started"><title>Configuration Options | Homechart</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css integrity="sha256-gsXb0jRHzuC0wqo+0Izglh+qQOH6Nw7uT4yfAuDUa18=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.6d62532b7df80ddd6780b48846a9a3b5b02743cdf7e7ba7eab27670aeab88e4d.js integrity="sha256-bWJTK334Dd1ngLSIRqmjtbAnQ83357p+qydnCuq4jk0=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.9982a24cc54bbe1a2875b8434117167fab53afb3a6ffe478987e99ac9ff86d5e.js integrity="sha256-mYKiTMVLvhoodbhDQRcWf6tTr7Om/+R4mH6ZrJ/4bV4=" crossorigin=anonymous></script>
 <script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>Homechart</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Getting Started</span><ul><li><a href=/getting-started/in-the-cloud/>In The Cloud (Hosted)</a></li><li><input type=checkbox id=section-fff7a7b47b1d4ccb9f6e84b86d7edf71 class=toggle checked>
 <label for=section-fff7a7b47b1d4ccb9f6e84b86d7edf71 class="flex justify-between"><a role=button>On Your Network (Self-Hosted)</a></label><ul><li><span>Installation</span><ul><li><a href=/getting-started/on-your-network/installation/requirements/>Requirements</a></li><li><a href=/getting-started/on-your-network/installation/binary-install/>Binary Install</a></li><li><a href=/getting-started/on-your-network/installation/container-install/>Container Install</a></li><li><a href=/getting-started/on-your-network/installation/configuration-options/ class=active>Configuration Options</a></li></ul></li><li><span>Operations</span><ul><li><a href=/getting-started/on-your-network/operations/backups/>Backups</a></li><li><a href=/getting-started/on-your-network/operations/updates/>Updates</a></li><li><a href=/getting-started/on-your-network/operations/sso/>Single Sign-On (SSO)</a></li></ul></li><li><a href=/getting-started/on-your-network/homechart-premium/>Homechart Premium</a></li></ul></li></ul></li><li class=book-section-flat><span>Using Homechart</span><ul><li><a href=/using-homechart/android/>Android</a></li><li><a href=/using-homechart/ios/>iOS</a></li><li><a href=/using-homechart/web/>Web</a></li></ul></li><li class=book-section-flat><span>Getting Help</span><ul><li><a href=/getting-help/community-support/>Community Support</a></li><li><a href=/getting-help/paid-support/>Paid Support</a></li></ul></li><li><a href=/communities/>Communities</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Configuration Options</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#configuration-options>Configuration Options</a><ul><li><a href=#app>app</a><ul><li><a href=#adminemailaddresses-recommended>adminEmailAddresses (recommended)</a></li><li><a href=#baseurl-recommended>baseURL (recommended)</a></li><li><a href=#cachettlminutes>cacheTTLMinutes</a></li><li><a href=#debug>debug</a></li><li><a href=#demo>demo</a></li><li><a href=#disabletasks>disableTasks</a></li><li><a href=#keepcalendareventdays>keepCalendarEventDays</a></li><li><a href=#keepcookmealplandays>keepCookMealPlanDays</a></li><li><a href=#keepdeleteddays>keepDeletedDays</a></li><li><a href=#keepnotespageversions>keepNotesPageVersions</a></li><li><a href=#keepplantasksdays>keepPlanTasksDays</a></li><li><a href=#motd>motd</a></li><li><a href=#noemaildomains>noEmailDomains</a></li><li><a href=#app-port>port</a></li><li><a href=#app-proxyaddress>proxyAddress</a></li><li><a href=#app-proxyheaderemail>proxyHeaderEmail</a></li><li><a href=#app-proxyheadername>proxyHeaderName</a></li><li><a href=#ratelimiterrate>rateLimiterRate</a></li><li><a href=#rollupbudgettransactionsbalancemonths>rollupBudgetTransactionsBalanceMonths</a></li><li><a href=#rollupbudgettransactionssummarymonths>rollupBudgetTransactionsSummaryMonths</a></li><li><a href=#sessionexpirationdefaultseconds>sessionExpirationDefaultSeconds</a></li><li><a href=#sessionexpirationrememberseconds>sessionExpirationRememberSeconds</a></li><li><a href=#signupdisabled>signupDisabled</a></li><li><a href=#tlscertificate>tlsCertificate</a></li><li><a href=#tlskey>tlsKey</a></li></ul></li><li><a href=#postgresql>postgresql</a><ul><li><a href=#database-required>database (required)</a></li><li><a href=#postgresql-hostname>hostname (required)</a></li><li><a href=#maxconnections>maxConnections</a></li><li><a href=#maxidleconnections>maxIdleConnections</a></li><li><a href=#maxlifetimeminutes>maxLifetimeMinutes</a></li><li><a href=#postgresql-password>password (required)</a></li><li><a href=#postgresql-port>port</a></li><li><a href=#sslmode>sslMode</a></li><li><a href=#postgresql-username>username (required)</a></li></ul></li><li><a href=#smtp>smtp</a><ul><li><a href=#emailaddress>emailAddress</a></li><li><a href=#smtp-hostname>hostname</a></li><li><a href=#replyto>replyTo</a></li><li><a href=#smtp-port>port</a></li><li><a href=#smtp-password>password</a></li><li><a href=#smtp-username>username</a></li></ul></li><li><a href=#vault>vault</a><ul><li><a href=#address>address</a></li><li><a href=#kvpaths>kvPaths</a></li><li><a href=#token>token</a></li></ul></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=configuration-options>Configuration Options
-<a class=anchor href=#configuration-options>#</a></h1><p>Homechart can be configured using environment variables or a JSON configuration file. The configuration is divided into sections:</p><ul><li><a href=#app>App</a></li><li><a href=#postgresql>PostgreSQL</a></li><li><a href=#smtp>SMTP</a></li><li><a href=#vault>Vault</a></li></ul><p>For environment variables, every configuration key can be set using <code>HOMECHART_&lt;SECTION>_&lt;KEY>=a value</code>, i.e. <code>HOMECHART_APP_DEBUG=true</code></p><p>For a JSON configuration file, the keys are camelCase and nested under each section:</p><pre tabindex=0><code>{
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#configuration-options>Configuration Options</a><ul><li><a href=#app>app</a><ul><li><a href=#adminemailaddresses-recommended>adminEmailAddresses (recommended)</a></li><li><a href=#baseurl-recommended>baseURL (recommended)</a></li><li><a href=#cachettlminutes>cacheTTLMinutes</a></li><li><a href=#debug>debug</a></li><li><a href=#demo>demo</a></li><li><a href=#disabletasks>disableTasks</a></li><li><a href=#keepcalendareventdays>keepCalendarEventDays</a></li><li><a href=#keepcookmealplandays>keepCookMealPlanDays</a></li><li><a href=#keepdeleteddays>keepDeletedDays</a></li><li><a href=#keephealthlogdays>keepHealthLogDays</a></li><li><a href=#keepnotespageversions>keepNotesPageVersions</a></li><li><a href=#keepplantasksdays>keepPlanTasksDays</a></li><li><a href=#motd>motd</a></li><li><a href=#noemaildomains>noEmailDomains</a></li><li><a href=#app-port>port</a></li><li><a href=#app-proxyaddress>proxyAddress</a></li><li><a href=#app-proxyheaderemail>proxyHeaderEmail</a></li><li><a href=#app-proxyheadername>proxyHeaderName</a></li><li><a href=#ratelimiterrate>rateLimiterRate</a></li><li><a href=#rollupbudgettransactionsbalancemonths>rollupBudgetTransactionsBalanceMonths</a></li><li><a href=#rollupbudgettransactionssummarymonths>rollupBudgetTransactionsSummaryMonths</a></li><li><a href=#sessionexpirationdefaultseconds>sessionExpirationDefaultSeconds</a></li><li><a href=#sessionexpirationrememberseconds>sessionExpirationRememberSeconds</a></li><li><a href=#signupdisabled>signupDisabled</a></li><li><a href=#tlscertificate>tlsCertificate</a></li><li><a href=#tlskey>tlsKey</a></li></ul></li><li><a href=#postgresql>postgresql</a><ul><li><a href=#database-required>database (required)</a></li><li><a href=#postgresql-hostname>hostname (required)</a></li><li><a href=#maxconnections>maxConnections</a></li><li><a href=#maxidleconnections>maxIdleConnections</a></li><li><a href=#maxlifetimeminutes>maxLifetimeMinutes</a></li><li><a href=#postgresql-password>password (required)</a></li><li><a href=#postgresql-port>port</a></li><li><a href=#sslmode>sslMode</a></li><li><a href=#postgresql-username>username (required)</a></li></ul></li><li><a href=#smtp>smtp</a><ul><li><a href=#emailaddress>emailAddress</a></li><li><a href=#smtp-hostname>hostname</a></li><li><a href=#replyto>replyTo</a></li><li><a href=#smtp-port>port</a></li><li><a href=#smtp-password>password</a></li><li><a href=#smtp-username>username</a></li></ul></li><li><a href=#vault>vault</a><ul><li><a href=#address>address</a></li><li><a href=#kvpaths>kvPaths</a></li><li><a href=#token>token</a></li></ul></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=configuration-options>Configuration Options
+<a class=anchor href=#configuration-options>#</a></h1><p>Homechart can be configured using environment variables or a JSON configuration file. The configuration is divided into sections:</p><ul><li><a href=#app>App</a></li><li><a href=#postgresql>PostgreSQL</a></li><li><a href=#smtp>SMTP</a></li><li><a href=#vault>Vault</a></li></ul><p><strong>For environment variables</strong>, every configuration key can be set using <code>HOMECHART_&lt;SECTION>_&lt;KEY>=a value</code>, i.e. <code>HOMECHART_APP_DEBUG=true</code></p><p><strong>For a JSON configuration file</strong>, the keys are camelCase and nested under each section:</p><pre tabindex=0><code>{
   &#34;app&#34;: {
     &#34;debug&#34;: true
   }
@@ -21,221 +21,226 @@ For a JSON configuration file, the keys are camelCase and nested under each sect
 <a class=anchor href=#adminemailaddresses-recommended>#</a></h3><p>List of email addresses which will have admin access to Homechart for their account.</p><pre tabindex=0><code>Type: List
 Default: []
 Environment Variable: HOMECHART_APP_ADMINEMAILADDRESSES
-JSON: `{&#34;app&#34;: {&#34;adminEmailAddresses&#34;: []}}`
+JSON: {&#34;app&#34;: {&#34;adminEmailAddresses&#34;: []}}
 </code></pre><h3 id=baseurl-recommended>baseURL (recommended)
 <a class=anchor href=#baseurl-recommended>#</a></h3><p>Base URL for Homechart, mostly used by notifications.</p><pre tabindex=0><code>Type: string
 Default: &#34;https://web.homechart.app&#34;
 Environment Variable: HOMECHART_APP_BASEURL
-JSON: `{&#34;app&#34;: {&#34;baseURL&#34;: &#34;https://web.homechart.app&#34;}}`
+JSON: {&#34;app&#34;: {&#34;baseURL&#34;: &#34;https://web.homechart.app&#34;}}
 </code></pre><h3 id=cachettlminutes>cacheTTLMinutes
 <a class=anchor href=#cachettlminutes>#</a></h3><p>Number of minutes to keep entries in cache.</p><pre tabindex=0><code>Type: integer
 Default: 15
 Environment Variable: HOMECHART_APP_CACHETTLMINUTES
-JSON: `{&#34;app&#34;: {&#34;cacheTTLMinutes&#34;: 15}}`
+JSON: {&#34;app&#34;: {&#34;cacheTTLMinutes&#34;: 15}}
 </code></pre><h3 id=debug>debug
 <a class=anchor href=#debug>#</a></h3><p>Enable debug logging.</p><pre tabindex=0><code>Type: boolean
 Default: false
 Environment Variable: HOMECHART_APP_DEBUG
-JSON: `{&#34;app&#34;: {&#34;debug&#34;: false}}`
+JSON: {&#34;app&#34;: {&#34;debug&#34;: false}}
 </code></pre><h3 id=demo>demo
 <a class=anchor href=#demo>#</a></h3><p>Allow users to create demo logins, mostly used by web.homechart.app. Easy way to try out Homechart.</p><pre tabindex=0><code>Type: boolean
 Default: false
 Environment Variable: HOMECHART_APP_DEMO
-JSON: `{&#34;app&#34;: {&#34;demo&#34;: false}}`
+JSON: {&#34;app&#34;: {&#34;demo&#34;: false}}
 </code></pre><h3 id=disabletasks>disableTasks
 <a class=anchor href=#disabletasks>#</a></h3><p>Disable any background tasks (sending notifications, cleaning up old data) from running on this instance.</p><pre tabindex=0><code>Type: boolean
 Default: false
 Environment Variable: HOMECHART_APP_DISABLETASKS
-JSON: `{&#34;app&#34;: {&#34;disableTasks&#34;: false}}`
+JSON: {&#34;app&#34;: {&#34;disableTasks&#34;: false}}
 </code></pre><h3 id=keepcalendareventdays>keepCalendarEventDays
 <a class=anchor href=#keepcalendareventdays>#</a></h3><p>Number of days to retain Calendar Events after their end date.</p><pre tabindex=0><code>Type: integer
 Default: 90
 Environment Variable: HOMECHART_APP_KEEPCALENDAREVENTDAYS
-JSON: `{&#34;app&#34;: {&#34;keepCalendarEventDays&#34;: 90}}`
+JSON: {&#34;app&#34;: {&#34;keepCalendarEventDays&#34;: 90}}
 </code></pre><h3 id=keepcookmealplandays>keepCookMealPlanDays
 <a class=anchor href=#keepcookmealplandays>#</a></h3><p>Number of days to retain Cook Meal Plans after their scheduled date.</p><pre tabindex=0><code>Type: integer
 Default: 90
 Environment Variable: HOMECHART_APP_KEEPCOOKMEALPLANDAYS
-JSON: `{&#34;app&#34;: {&#34;keepCookMealPlanDays&#34;: 90}}`
+JSON: {&#34;app&#34;: {&#34;keepCookMealPlanDays&#34;: 90}}
 </code></pre><h3 id=keepdeleteddays>keepDeletedDays
 <a class=anchor href=#keepdeleteddays>#</a></h3><p>Number of days to keep deleted data (Notes, Recipes).</p><pre tabindex=0><code>Type: integer
 Default: 30
 Environment Variable: HOMECHART_APP_KEEPDELETEDDAYS
-JSON: `{&#34;app&#34;: {&#34;keepDeletedDays&#34;: 30}}`
+JSON: {&#34;app&#34;: {&#34;keepDeletedDays&#34;: 30}}
+</code></pre><h3 id=keephealthlogdays>keepHealthLogDays
+<a class=anchor href=#keephealthlogdays>#</a></h3><p>Number of days to retain Health Logs.</p><pre tabindex=0><code>Type: integer
+Default: 90
+Environment Variable: HOMECHART_APP_KEEPHEALTHLOGDAYS
+JSON: {&#34;app&#34;: {&#34;keepHealthLogDays&#34;: 90}}
 </code></pre><h3 id=keepnotespageversions>keepNotesPageVersions
 <a class=anchor href=#keepnotespageversions>#</a></h3><p>Number of Notes Page Versions to keep.</p><pre tabindex=0><code>Type: integer
 Default: 10
 Environment Variable: HOMECHART_APP_KEEPNOTESPAGEVERSIONS
-JSON: `{&#34;app&#34;: {&#34;keepNotesPageVersions&#34;: 10}}`
+JSON: {&#34;app&#34;: {&#34;keepNotesPageVersions&#34;: 10}}
 </code></pre><h3 id=keepplantasksdays>keepPlanTasksDays
 <a class=anchor href=#keepplantasksdays>#</a></h3><p>Number of days to keep completed tasks.</p><pre tabindex=0><code>Type: integer
 Default: 90
 Environment Variable: HOMECHART_APP_KEEPPLANTASKSDAYS
-JSON: `{&#34;app&#34;: {&#34;keepPlanTasksDays&#34;: 90}}`
+JSON: {&#34;app&#34;: {&#34;keepPlanTasksDays&#34;: 90}}
 </code></pre><h3 id=motd>motd
 <a class=anchor href=#motd>#</a></h3><p>Informational message to display on the UI for all users.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_APP_MOTD
-JSON: `{&#34;app&#34;: {&#34;motd&#34;: &#34;&#34;}}`
+JSON: {&#34;app&#34;: {&#34;motd&#34;: &#34;&#34;}}
 </code></pre><h3 id=noemaildomains>noEmailDomains
 <a class=anchor href=#noemaildomains>#</a></h3><p>List of domains that will not be verified. Use this to automatically activate accounts for each domain listed.</p><pre tabindex=0><code>Type: list
 Default: []
 Environment Variable: HOMECHART_APP_NOEMAILDOMAINS
-JSON: `{&#34;app&#34;: {&#34;noEmailDomains&#34;: []}}`
+JSON: {&#34;app&#34;: {&#34;noEmailDomains&#34;: []}}
 </code></pre><h3 id=app-port>port
 <a class=anchor href=#app-port>#</a></h3><p>Listening port for Homechart. Setup port forwarding to this port.</p><pre tabindex=0><code>Type: integer
 Default: 3000
 Environment Variable: HOMECHART_APP_PORT
-JSON: `{&#34;app&#34;: {&#34;port&#34;: 3000}}`
+JSON: {&#34;app&#34;: {&#34;port&#34;: 3000}}
 </code></pre><h3 id=app-proxyaddress>proxyAddress
 <a class=anchor href=#app-proxyaddress>#</a></h3><p>Upstream IPv4 or IPv6 address of a trusted proxy. See <a href=/getting-started/on-your-network/operations/sso/>SSO documentation</a> for usage details.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_APP_PROXYADDRESS
-JSON: `{&#34;app&#34;: {&#34;proxyAddress&#34;: &#34;&#34;}}`
+JSON: {&#34;app&#34;: {&#34;proxyAddress&#34;: &#34;&#34;}}
 </code></pre><h3 id=app-proxyheaderemail>proxyHeaderEmail
 <a class=anchor href=#app-proxyheaderemail>#</a></h3><p>Proxy header that should be associated with an account email address. See <a href=/getting-started/on-your-network/operations/sso/>SSO documentation</a> for usage details.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_APP_PROXYHEADEREMAIL
-JSON: `{&#34;app&#34;: {&#34;proxyHeaderEmail&#34;: &#34;&#34;}}`
+JSON: {&#34;app&#34;: {&#34;proxyHeaderEmail&#34;: &#34;&#34;}}
 </code></pre><h3 id=app-proxyheadername>proxyHeaderName
 <a class=anchor href=#app-proxyheadername>#</a></h3><p>Proxy header that should be associated with an account name. See <a href=/getting-started/on-your-network/operations/sso/>SSO documentation</a> for usage details.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_APP_PROXYHEADERNAME
-JSON: `{&#34;app&#34;: {&#34;proxyHeaderName&#34;: &#34;&#34;}}`
+JSON: {&#34;app&#34;: {&#34;proxyHeaderName&#34;: &#34;&#34;}}
 </code></pre><h3 id=ratelimiterrate>rateLimiterRate
 <a class=anchor href=#ratelimiterrate>#</a></h3><p>Maximum number of requests over a specific time to public endpoints. Prevents brute force attacks. Takes the format of (number-H/M/S) where H=hour, M=minute, S=Second. The default, 15-H, means 15 requests per hour.</p><pre tabindex=0><code>Type: string
 Default: &#34;15-H&#34;
 Environment Variable: HOMECHART_APP_RATELIMITERRATE
-JSON: `{&#34;app&#34;: {&#34;rateLimiterRate&#34;: &#34;15-H&#34;}}`
+JSON: {&#34;app&#34;: {&#34;rateLimiterRate&#34;: &#34;15-H&#34;}}
 </code></pre><h3 id=rollupbudgettransactionsbalancemonths>rollupBudgetTransactionsBalanceMonths
 <a class=anchor href=#rollupbudgettransactionsbalancemonths>#</a></h3><p>Number of months before a Budget Transaction is rolled up into a starting balance.</p><pre tabindex=0><code>Type: integer
 Default: 48
 Environment Variable: HOMECHART_APP_ROLLUPBUDGETTRANSACTIONSBALANCEMONTHS
-JSON: `{&#34;app&#34;: {&#34;rollupBudgetTransactionsBalanceMonths&#34;: 48}}`
+JSON: {&#34;app&#34;: {&#34;rollupBudgetTransactionsBalanceMonths&#34;: 48}}
 </code></pre><h3 id=rollupbudgettransactionssummarymonths>rollupBudgetTransactionsSummaryMonths
 <a class=anchor href=#rollupbudgettransactionssummarymonths>#</a></h3><p>Number of months before a Budget Transaction is rolled up into monthly summaries.</p><pre tabindex=0><code>Type: integer
 Default: 12
 Environment Variable: HOMECHART_APP_ROLLUPBUDGETTRANSACTIONSSUMMARYMONTHS
-JSON: `{&#34;app&#34;: {&#34;rollupBudgetTransactionsSummaryMonths&#34;: 12}}`
+JSON: {&#34;app&#34;: {&#34;rollupBudgetTransactionsSummaryMonths&#34;: 12}}
 </code></pre><h3 id=sessionexpirationdefaultseconds>sessionExpirationDefaultSeconds
 <a class=anchor href=#sessionexpirationdefaultseconds>#</a></h3><p>Time between non-Remember Me sessions expiring, in seconds.</p><pre tabindex=0><code>Type: integer
 Default: 3600
 Environment Variable: HOMECHART_APP_SESSIONEXPIRATIONDEFAULTSECONDS
-JSON: `{&#34;app&#34;: {&#34;sessionExpirationDefaultSeconds&#34;: 3600}}`
+JSON: {&#34;app&#34;: {&#34;sessionExpirationDefaultSeconds&#34;: 3600}}
 </code></pre><h3 id=sessionexpirationrememberseconds>sessionExpirationRememberSeconds
 <a class=anchor href=#sessionexpirationrememberseconds>#</a></h3><p>Time between Remember Me sessions expiring, in seconds.</p><pre tabindex=0><code>Type: integer
 Default: 7776000
 Environment Variable: HOMECHART_APP_SESSIONEXPIRATIONREMEMBERSECONDS
-JSON: `{&#34;app&#34;: {&#34;sessionExpirationRememberSeconds&#34;: 7776000}}`
+JSON: {&#34;app&#34;: {&#34;sessionExpirationRememberSeconds&#34;: 7776000}}
 </code></pre><h3 id=signupdisabled>signupDisabled
 <a class=anchor href=#signupdisabled>#</a></h3><p>Disables new account signups. Accounts can still be created/invited under the Admin > Household page and Settings > Household. Self-hosted instances should enable this after they have setup their household.</p><pre tabindex=0><code>Type: boolean
 Default: false
 Environment Variable: HOMECHART_APP_SIGNUPDISABLED
-JSON: `{&#34;app&#34;: {&#34;signupDisabled&#34;: false}}`
+JSON: {&#34;app&#34;: {&#34;signupDisabled&#34;: false}}
 </code></pre><h3 id=tlscertificate>tlsCertificate
 <a class=anchor href=#tlscertificate>#</a></h3><p>Path to a SSL/TLS certificate file. Should work for the domain in your <a href=#baseURL>baseURL</a>. If set, along with <a href=#tlsKey>tlsKey</a>, Homechart will listen for HTTPS connections only.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_APP_TLSCERTIFICATE
-JSON: `{&#34;app&#34;: {&#34;tlsCertificate&#34;: &#34;&#34;}}`
+JSON: {&#34;app&#34;: {&#34;tlsCertificate&#34;: &#34;&#34;}}
 </code></pre><h3 id=tlskey>tlsKey
 <a class=anchor href=#tlskey>#</a></h3><p>Path to a SSL/TLS private key file. Should work for the domain in your <a href=#baseURL>baseURL</a>. If set, along with <a href=#tlsCertificate>tlsCertificate</a>), Homechart will listen for HTTPS connections only.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_APP_TLSKEY
-JSON: `{&#34;app&#34;: {&#34;tlsKey&#34;: &#34;&#34;}}`
+JSON: {&#34;app&#34;: {&#34;tlsKey&#34;: &#34;&#34;}}
 </code></pre><h2 id=postgresql>postgresql
 <a class=anchor href=#postgresql>#</a></h2><h3 id=database-required>database (required)
 <a class=anchor href=#database-required>#</a></h3><p>Database to use when connecting to PostgreSQL.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_POSTGRESQL_DATABASE
-JSON: `{&#34;postgresql&#34;: {&#34;database&#34;: &#34;&#34;}}`
+JSON: {&#34;postgresql&#34;: {&#34;database&#34;: &#34;&#34;}}
 </code></pre><h3 id=postgresql-hostname>hostname (required)
 <a class=anchor href=#postgresql-hostname>#</a></h3><p>Hostname to use when connecting to PostgreSQL.</p><pre tabindex=0><code>Type: string
 Default: &#34;localhost&#34;
 Environment Variable: HOMECHART_POSTGRESQL_HOSTNAME
-JSON: `{&#34;postgresql&#34;: {&#34;hostname&#34;: &#34;localhost&#34;}}`
+JSON: {&#34;postgresql&#34;: {&#34;hostname&#34;: &#34;localhost&#34;}}
 </code></pre><h3 id=maxconnections>maxConnections
 <a class=anchor href=#maxconnections>#</a></h3><p>Maximum number of open connections to PostgreSQL.</p><pre tabindex=0><code>Type: integer
 Default: 25
 Environment Variable: HOMECHART_POSTGRESQL_MAXCONNECTIONS
-JSON: `{&#34;postgresql&#34;: {&#34;maxConnections&#34;: 25}}`
+JSON: {&#34;postgresql&#34;: {&#34;maxConnections&#34;: 25}}
 </code></pre><h3 id=maxidleconnections>maxIdleConnections
 <a class=anchor href=#maxidleconnections>#</a></h3><p>Maximum number of idle connections to PostgreSQL.</p><pre tabindex=0><code>Type: integer
 Default: 5
 Environment Variable: HOMECHART_POSTGRESQL_MAXIDLECONNECTIONS
-JSON: `{&#34;postgresql&#34;: {&#34;maxIdleConnections&#34;: 5}}`
+JSON: {&#34;postgresql&#34;: {&#34;maxIdleConnections&#34;: 5}}
 </code></pre><h3 id=maxlifetimeminutes>maxLifetimeMinutes
 <a class=anchor href=#maxlifetimeminutes>#</a></h3><p>Maximum number of minutes to keep a connection to PostgreSQL open.</p><pre tabindex=0><code>Type: integer
 Default: 5
 Environment Variable: HOMECHART_POSTGRESQL_MAXLIFETIMEMINUTES
-JSON: `{&#34;postgresql&#34;: {&#34;maxLifetimeMinutes&#34;: 5}}`
+JSON: {&#34;postgresql&#34;: {&#34;maxLifetimeMinutes&#34;: 5}}
 </code></pre><h3 id=postgresql-password>password (required)
 <a class=anchor href=#postgresql-password>#</a></h3><p>Password to use when connecting to PostgreSQL.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_POSTGRESQL_PASSWORD
-JSON: `{&#34;postgresql&#34;: {&#34;password&#34;: &#34;&#34;}}`
+JSON: {&#34;postgresql&#34;: {&#34;password&#34;: &#34;&#34;}}
 </code></pre><h3 id=postgresql-port>port
 <a class=anchor href=#postgresql-port>#</a></h3><p>TCP port to use when connecting to PostgreSQL.</p><pre tabindex=0><code>Type: integer
 Default: 5432
 Environment Variable: HOMECHART_POSTGRESQL_PORT
-JSON: `{&#34;postgresql&#34;: {&#34;port&#34;: 5432}}`
+JSON: {&#34;postgresql&#34;: {&#34;port&#34;: 5432}}
 </code></pre><h3 id=sslmode>sslMode
 <a class=anchor href=#sslmode>#</a></h3><p>PostgreSQL SSL/TLS enforcement level.</p><pre tabindex=0><code>Type: string
 Default: &#34;disable&#34;
 Environment Variable: HOMECHART_POSTGRESQL_SSLMODE
-JSON: `{&#34;postgresql&#34;: {&#34;sslMode&#34;: &#34;disable&#34;}}`
+JSON: {&#34;postgresql&#34;: {&#34;sslMode&#34;: &#34;disable&#34;}}
 </code></pre><h3 id=postgresql-username>username (required)
 <a class=anchor href=#postgresql-username>#</a></h3><p>Username to use when connecting to PostgreSQL.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_POSTGRESQL_USERNAME
-JSON: `{&#34;postgresql&#34;: {&#34;username&#34;: &#34;&#34;}}`
+JSON: {&#34;postgresql&#34;: {&#34;username&#34;: &#34;&#34;}}
 </code></pre><h2 id=smtp>smtp
 <a class=anchor href=#smtp>#</a></h2><p>Homechart can use a SMTP server to send notifications to your household members. You can also subscribe to
 <a href=/getting-started/on-your-network/homechart-premium/>Homechart Premium</a> to get push notifications.</p><h3 id=emailaddress>emailAddress
 <a class=anchor href=#emailaddress>#</a></h3><p>Email address to send from.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_SMTP_EMAILADDRESS
-JSON: `{&#34;smtp&#34;: {&#34;emailAddress&#34;: &#34;&#34;}}`
+JSON: {&#34;smtp&#34;: {&#34;emailAddress&#34;: &#34;&#34;}}
 </code></pre><h3 id=smtp-hostname>hostname
 <a class=anchor href=#smtp-hostname>#</a></h3><p>Hostname to use when connecting to SMTP server.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_SMTP_HOSTNAME
-JSON: `{&#34;smtp&#34;: {&#34;hostname&#34;: &#34;&#34;}}`
+JSON: {&#34;smtp&#34;: {&#34;hostname&#34;: &#34;&#34;}}
 </code></pre><h3 id=replyto>replyTo
 <a class=anchor href=#replyto>#</a></h3><p>Email address to have users send to when replying.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_SMTP_REPLYTO
-JSON: `{&#34;smtp&#34;: {&#34;replyTo&#34;: &#34;&#34;}}`
+JSON: {&#34;smtp&#34;: {&#34;replyTo&#34;: &#34;&#34;}}
 </code></pre><h3 id=smtp-port>port
 <a class=anchor href=#smtp-port>#</a></h3><p>TCP port to use when connecting to SMTP server.</p><pre tabindex=0><code>Type: integer
 Default: 587
 Environment Variable: HOMECHART_SMTP_PORT
-JSON: `{&#34;smtp&#34;: {&#34;port&#34;: 587}}`
+JSON: {&#34;smtp&#34;: {&#34;port&#34;: 587}}
 </code></pre><h3 id=smtp-password>password
 <a class=anchor href=#smtp-password>#</a></h3><p>Password to use when connecting to SMTP server.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_SMTP_PASSWORD
-JSON: `{&#34;smtp&#34;: {&#34;password&#34;: &#34;&#34;}}`
+JSON: {&#34;smtp&#34;: {&#34;password&#34;: &#34;&#34;}}
 </code></pre><h3 id=smtp-username>username
 <a class=anchor href=#smtp-username>#</a></h3><p>Username to use when connecting to SMTP server.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_SMTP_USERNAME
-JSON: `{&#34;smtp&#34;: {&#34;username&#34;: &#34;&#34;}}`
+JSON: {&#34;smtp&#34;: {&#34;username&#34;: &#34;&#34;}}
 </code></pre><h2 id=vault>vault
 <a class=anchor href=#vault>#</a></h2><p>Homechart can use
 <a href=https://www.vaultproject.io>HashiCorp Vault</a> to retrieve configuration values. Homechart will look for specified kv secrets and read config values from fields within them. The fields must have the format:</p><ul><li><code>&lt;section>.&lt;key></code></li><li><code>app.disabletasks</code></li></ul><p>The field name must be lowercase. In theory, you can specify every config in Vault except the Vault stanza, Homechart needs to know where to get the Vault config from.</p><h3 id=address>address
 <a class=anchor href=#address>#</a></h3><p>Address of the HashiCorp Vault instance to use for secrets, also checks the VAULT_ADDR environment variable.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_VAULT_ADDRESS
-JSON: `{&#34;vault&#34;: {&#34;address&#34;: &#34;&#34;}}`
+JSON: {&#34;vault&#34;: {&#34;address&#34;: &#34;&#34;}}
 </code></pre><h3 id=kvpaths>kvPaths
 <a class=anchor href=#kvpaths>#</a></h3><p>List of HashiCorp Vault kv2 paths to fetch config values from. Secrets must have lowercase fields like <code>postgresql.database</code> or <code>smtp.username</code>. Paths will overwrite values from previous paths, so the order is important.</p><pre tabindex=0><code>Type: list
 Default: []
 Environment Variable: HOMECHART_VAULT_KVPATHS
-JSON: `{&#34;vault&#34;: {&#34;kvPaths&#34;: []}}`
+JSON: {&#34;vault&#34;: {&#34;kvPaths&#34;: []}}
 </code></pre><h3 id=token>token
 <a class=anchor href=#token>#</a></h3><p>HashiCorp Vault token to use for secrets, also checks VAULT_TOKEN.</p><pre tabindex=0><code>Type: string
 Default: &#34;&#34;
 Environment Variable: HOMECHART_VAULT_TOKEN
-JSON: `{&#34;vault&#34;: {&#34;token&#34;: &#34;&#34;}}`
+JSON: {&#34;vault&#34;: {&#34;token&#34;: &#34;&#34;}}
 </code></pre></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/candiddev/homechart/edit/main/content/getting-started/on-your-network/installation/configuration-options.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>Edit this page</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#configuration-options>Configuration Options</a><ul><li><a href=#app>app</a><ul><li><a href=#adminemailaddresses-recommended>adminEmailAddresses (recommended)</a></li><li><a href=#baseurl-recommended>baseURL (recommended)</a></li><li><a href=#cachettlminutes>cacheTTLMinutes</a></li><li><a href=#debug>debug</a></li><li><a href=#demo>demo</a></li><li><a href=#disabletasks>disableTasks</a></li><li><a href=#keepcalendareventdays>keepCalendarEventDays</a></li><li><a href=#keepcookmealplandays>keepCookMealPlanDays</a></li><li><a href=#keepdeleteddays>keepDeletedDays</a></li><li><a href=#keepnotespageversions>keepNotesPageVersions</a></li><li><a href=#keepplantasksdays>keepPlanTasksDays</a></li><li><a href=#motd>motd</a></li><li><a href=#noemaildomains>noEmailDomains</a></li><li><a href=#app-port>port</a></li><li><a href=#app-proxyaddress>proxyAddress</a></li><li><a href=#app-proxyheaderemail>proxyHeaderEmail</a></li><li><a href=#app-proxyheadername>proxyHeaderName</a></li><li><a href=#ratelimiterrate>rateLimiterRate</a></li><li><a href=#rollupbudgettransactionsbalancemonths>rollupBudgetTransactionsBalanceMonths</a></li><li><a href=#rollupbudgettransactionssummarymonths>rollupBudgetTransactionsSummaryMonths</a></li><li><a href=#sessionexpirationdefaultseconds>sessionExpirationDefaultSeconds</a></li><li><a href=#sessionexpirationrememberseconds>sessionExpirationRememberSeconds</a></li><li><a href=#signupdisabled>signupDisabled</a></li><li><a href=#tlscertificate>tlsCertificate</a></li><li><a href=#tlskey>tlsKey</a></li></ul></li><li><a href=#postgresql>postgresql</a><ul><li><a href=#database-required>database (required)</a></li><li><a href=#postgresql-hostname>hostname (required)</a></li><li><a href=#maxconnections>maxConnections</a></li><li><a href=#maxidleconnections>maxIdleConnections</a></li><li><a href=#maxlifetimeminutes>maxLifetimeMinutes</a></li><li><a href=#postgresql-password>password (required)</a></li><li><a href=#postgresql-port>port</a></li><li><a href=#sslmode>sslMode</a></li><li><a href=#postgresql-username>username (required)</a></li></ul></li><li><a href=#smtp>smtp</a><ul><li><a href=#emailaddress>emailAddress</a></li><li><a href=#smtp-hostname>hostname</a></li><li><a href=#replyto>replyTo</a></li><li><a href=#smtp-port>port</a></li><li><a href=#smtp-password>password</a></li><li><a href=#smtp-username>username</a></li></ul></li><li><a href=#vault>vault</a><ul><li><a href=#address>address</a></li><li><a href=#kvpaths>kvPaths</a></li><li><a href=#token>token</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
+<span>Edit this page</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#configuration-options>Configuration Options</a><ul><li><a href=#app>app</a><ul><li><a href=#adminemailaddresses-recommended>adminEmailAddresses (recommended)</a></li><li><a href=#baseurl-recommended>baseURL (recommended)</a></li><li><a href=#cachettlminutes>cacheTTLMinutes</a></li><li><a href=#debug>debug</a></li><li><a href=#demo>demo</a></li><li><a href=#disabletasks>disableTasks</a></li><li><a href=#keepcalendareventdays>keepCalendarEventDays</a></li><li><a href=#keepcookmealplandays>keepCookMealPlanDays</a></li><li><a href=#keepdeleteddays>keepDeletedDays</a></li><li><a href=#keephealthlogdays>keepHealthLogDays</a></li><li><a href=#keepnotespageversions>keepNotesPageVersions</a></li><li><a href=#keepplantasksdays>keepPlanTasksDays</a></li><li><a href=#motd>motd</a></li><li><a href=#noemaildomains>noEmailDomains</a></li><li><a href=#app-port>port</a></li><li><a href=#app-proxyaddress>proxyAddress</a></li><li><a href=#app-proxyheaderemail>proxyHeaderEmail</a></li><li><a href=#app-proxyheadername>proxyHeaderName</a></li><li><a href=#ratelimiterrate>rateLimiterRate</a></li><li><a href=#rollupbudgettransactionsbalancemonths>rollupBudgetTransactionsBalanceMonths</a></li><li><a href=#rollupbudgettransactionssummarymonths>rollupBudgetTransactionsSummaryMonths</a></li><li><a href=#sessionexpirationdefaultseconds>sessionExpirationDefaultSeconds</a></li><li><a href=#sessionexpirationrememberseconds>sessionExpirationRememberSeconds</a></li><li><a href=#signupdisabled>signupDisabled</a></li><li><a href=#tlscertificate>tlsCertificate</a></li><li><a href=#tlskey>tlsKey</a></li></ul></li><li><a href=#postgresql>postgresql</a><ul><li><a href=#database-required>database (required)</a></li><li><a href=#postgresql-hostname>hostname (required)</a></li><li><a href=#maxconnections>maxConnections</a></li><li><a href=#maxidleconnections>maxIdleConnections</a></li><li><a href=#maxlifetimeminutes>maxLifetimeMinutes</a></li><li><a href=#postgresql-password>password (required)</a></li><li><a href=#postgresql-port>port</a></li><li><a href=#sslmode>sslMode</a></li><li><a href=#postgresql-username>username (required)</a></li></ul></li><li><a href=#smtp>smtp</a><ul><li><a href=#emailaddress>emailAddress</a></li><li><a href=#smtp-hostname>hostname</a></li><li><a href=#replyto>replyTo</a></li><li><a href=#smtp-port>port</a></li><li><a href=#smtp-password>password</a></li><li><a href=#smtp-username>username</a></li></ul></li><li><a href=#vault>vault</a><ul><li><a href=#address>address</a></li><li><a href=#kvpaths>kvPaths</a></li><li><a href=#token>token</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
