@@ -7,7 +7,7 @@ $ sha256sum -c homechart_latest_linux_amd64.gz.sha256 Once your download has com
 1. Review the requirements # Ensure your system meets the Server Requirements.
 2. Install a container runtime # Homechart can run on any OCI compatible runtime on Linux amd64 and arm64. Most users use Docker and Docker Compose, but we also support Kubernetes and Podman.
 3. Run Homechart # The Homechart container is configured to start Homechart server without having to specify a command or entrypoint.</description></item><item><title/><link>https://docs.homechart.app/installing-homechart/server/on-your-network/installation/configuration-options/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.homechart.app/installing-homechart/server/on-your-network/installation/configuration-options/</guid><description>Configuration Options # Homechart can be configured using environment variables or a JSON configuration file. The configuration is divided into sections:
-App PostgreSQL SMTP Vault For environment variables, every configuration key can be set using HOMECHART_&amp;lt;SECTION&amp;gt;_&amp;lt;KEY&amp;gt;=a value, i.e. HOMECHART_APP_DEBUG=true
+App App PostgreSQL SMTP Vault For environment variables, every configuration key can be set using HOMECHART_&amp;lt;SECTION&amp;gt;_&amp;lt;KEY&amp;gt;=a value, i.e. HOMECHART_CLI_DEBUG=true
 For a JSON or YAML configuration file, the keys are camelCase and nested under each section:
 JSON
 { &amp;#34;app&amp;#34;: { &amp;#34;baseURL&amp;#34;: &amp;#34;example.com&amp;#34; } } YAML
