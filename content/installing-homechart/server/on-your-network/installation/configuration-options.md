@@ -7,6 +7,7 @@ Homechart can be configured using environment variables or a JSON configuration 
 - <a href="#postgresql">PostgreSQL</a>
 - <a href="#smtp">SMTP</a>
 - <a href="#vault">Vault</a>
+- <a href="#webpush">Web Push</a>
 
 **For environment variables**, every configuration key can be set using `HOMECHART_<SECTION>_<KEY>=a value`, i.e. `HOMECHART_CLI_DEBUG=true`
 
@@ -542,4 +543,52 @@ Type: string
 Default: ""
 Environment Variable: HOMECHART_VAULT_TOKEN
 JSON: {"vault": {"token": ""}}
+```
+
+## webPush
+
+Homechart can use [Web Push](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) to send push notifications from Homechart to your devices.  Homechart communicates directly to web push services provided by Apple, Google, Mozilla and other standards-compliant endpoints.  Additionally, all of the data in the push notification is encrypted between your server and the client--the web push services can't read it.
+
+You need to generate the VAPID private and public keys to use Web Push.  This can be done from the command line, e.g.:
+
+```shell
+$ ./homechart_linux_amd64 generate-vapid
+{
+  "privateKey": "VEIYXV6qF_enUzycyQYdplDUgi05UM4lPh_FTzYmwX8",
+  "publicKey": "BNh2dabXjc2N8mctezlEm5pd1-1m_kkVZpdNYJl5gtRtdmKNIZvA6IZwYEYSy5UmVr5N7Bt9y9qKCLTp1sc_89c"
+}
+```
+
+Or using a container:
+
+```shell
+$ docker run -it --rm ghcr.io/candiddev/homechart generate-vapid
+{
+  "privateKey": "VEIYXV6qF_enUzycyQYdplDUgi05UM4lPh_FTzYmwX8",
+  "publicKey": "BNh2dabXjc2N8mctezlEm5pd1-1m_kkVZpdNYJl5gtRtdmKNIZvA6IZwYEYSy5UmVr5N7Bt9y9qKCLTp1sc_89c"
+}
+```
+
+This command will output the private and public keys you'll use in the configuration sections below.
+
+### vapidPrivateKey
+
+The privateKey value from running `generate-vapid`.
+
+```
+Type: string
+Default: []
+Environment Variable: HOMECHART_WEBPUSH_VAPIDPRIVATEKEY
+JSON: {"webPush": {"vapidPrivateKey": []}}
+```
+
+### vapidPublicKey
+
+The publicKey value from running `generate-vapid`.
+
+```
+Type: string
+Default: ""
+Environment Variable: HOMECHART_WEBPUSH_VAPIDPUBLICKEY
+JSON: {"webPush": {"vapidPublicKey": ""}}
 ```
