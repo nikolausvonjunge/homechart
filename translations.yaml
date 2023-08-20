@@ -3807,7 +3807,7 @@ translations:
   WebFormItemDurationHours:
     ar: ساعات
     context: Multiple hour
-    de: Std
+    de: Stunden
     en: Hours
     es: Horas
     fr: Heures
@@ -3827,7 +3827,7 @@ translations:
   WebFormItemDurationMinutes:
     ar: دقائق
     context: Multiple minute
-    de: Protokoll
+    de: Minuten
     en: Minutes
     es: Minutos
     fr: Minutes
@@ -5415,7 +5415,7 @@ translations:
   WebFormRecurrenceEnd:
     ar: إنهاء التكرار في
     context: Date to end a recurrence on
-    de: Wiederholung beenden ein
+    de: Wiederholung beenden am
     en: End Recurrence On
     es: Terminar recurrencia en
     fr: Fin de la récurrence le
@@ -5968,7 +5968,7 @@ translations:
   WebGlobalActionCancel:
     ar: يلغي
     context: Cancel something
-    de: Stornieren
+    de: Abbrechen
     en: Cancel
     es: Cancelar
     fr: Annuler
@@ -6448,7 +6448,7 @@ translations:
   WebGlobalActionShow:
     ar: يعرض
     context: Show something
-    de: Zeigen
+    de: Zeige
     en: Show
     es: Espectáculo
     fr: Montrer
@@ -6478,7 +6478,7 @@ translations:
   WebGlobalActionShowDeleted:
     ar: إظهار المحذوفة
     context: Show deleted items
-    de: Gelöscht anzeigen
+    de: Gelöschte anzeigen
     en: Show Deleted
     es: Mostrar eliminado
     fr: Afficher supprimé
@@ -8042,7 +8042,7 @@ translations:
   WebGlobalUpcoming:
     ar: القادمة
     context: Things that are happening soon
-    de: Kommend
+    de: Bevorstehend
     en: Upcoming
     es: próximos
     fr: A venir
@@ -8611,7 +8611,7 @@ translations:
   WebSettingsAccountPrivateKey:
     ar: مفتاح سري
     context: Create a new private key
-    de: Privat Schlüssel
+    de: Privater Schlüssel
     en: Private Key
     es: Llave privada
     fr: Clé privée
@@ -8671,7 +8671,7 @@ translations:
   WebSettingsAccountPrivateKeyPassphrases:
     ar: عبارات المرور الخاصة بالمفتاح
     context: Passphrases for a private key
-    de: Passphrasen für private Schlüssel
+    de: Passphrasen für privaten Schlüssel
     en: Private Key Passphrases
     es: Contraseñas de clave privada
     fr: Mots de passe de clé privée
